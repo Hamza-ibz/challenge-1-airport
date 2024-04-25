@@ -86,7 +86,30 @@ const userStory2 = function () {
         afterEach();
     };
 
+    const test2 = function () {
+        //? TEST 2 
+        //* user is able to Decrease the maximum capacity of planes that the airport can hold
+
+        // Arrange
+        testName = "Test 2 - Decrease the maximum capacity of planes that the airport can hold:";
+        const airport = new Airport(20);
+        expected = 5;
+
+        // Act
+        airport.setMaxCapacity(5);
+        actual = airport.getMaxCapacity();
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
     test1();
+    test2();
     console.log("\n\n")
 };
 
