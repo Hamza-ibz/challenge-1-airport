@@ -113,7 +113,7 @@ const userStory2 = function () {
         //* user is able to adjust the maximum capacity, of planes that the airport can hold, multiple times
 
         // Arrange
-        testName = "Test 3 - Adjust the maximum capacity of planes that the airport can hold multiple times:";
+        testName = "Test 3 - Adjust the maximum capacity of planes that the airport can hold, multiple times:";
         const airport = new Airport(20);
         expected = 25;
 
@@ -130,12 +130,34 @@ const userStory2 = function () {
         !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
         afterEach();
     };
+    const test4 = function () {
+        //? TEST 4 
+        //* Change maximum capacity to a negative number will give 0.
+
+        // Arrange
+        testName = "Test 4 - Change maximum capacity to a negative number will set maximum capacity to 0:";
+        const airport = new Airport(20);
+        expected = 0;
+
+        // Act
+        airport.setMaxCapacity(-5);
+        actual = airport.getMaxCapacity();
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
 
 
 
     test1();
     test2();
     test3();
+    test4();
     console.log("\n\n")
 };
 
