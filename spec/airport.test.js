@@ -25,7 +25,7 @@ const userStory1 = function () {
         expected = 20;
 
         // Act
-        let actual = airport.getMaxCapacity();
+        actual = airport.getMaxCapacity();
 
         // Assert
         result = assertEquals(actual, expected);
@@ -41,7 +41,7 @@ const userStory1 = function () {
         //* When software has negative number as maximum capacity, the maximum capacity sets to 0
 
         // Arrange
-        testName = "Test 2 - When software has negative number as maximum capacity, the maximum capacity sets to 0:";
+        testName = "Test 2 - A negative number as maximum capacity, sets maximum capacity to 0:";
         const airport = new Airport(-30);
         expected = 0;
 
@@ -58,6 +58,37 @@ const userStory1 = function () {
     };
     test1();
     test2();
+    console.log("\n\n")
+};
+
+const userStory2 = function () {
+    console.log(`========================== User Story 2 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* user is able to Increase the maximum capacity of planes that the airport can hold
+
+        // Arrange
+        testName = "Test 1 - Increase the maximum capacity of planes that the airport can hold:";
+        const airport = new Airport(20);
+        expected = 30;
+
+        // Act
+        airport.setMaxCapacity(30);
+        actual = airport.getMaxCapacity();
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+    test1();
+    console.log("\n\n")
 };
 
 userStory1();
+userStory2();
