@@ -1,5 +1,6 @@
 import Airport from "../src/airport.js";
 import { assertEquals } from "../spec/test-framework/test-framework.js";
+import Plane from "../src/plane.js";
 
 // Initializing repeated Variables
 let testName, expected, actual, result;
@@ -38,12 +39,12 @@ const userStory1 = function () {
 
     const test2 = function () {
         //? TEST 2 
-        //* When software has negative number as maximum capacity, the maximum capacity sets to 0
+        //* When software has negative number as maximum capacity, the maximum capacity does not change
 
         // Arrange
-        testName = "Test 2 - A negative number as maximum capacity, sets maximum capacity to 0:";
-        const airport = new Airport(-30);
-        expected = 0;
+        testName = "Test 2 - A negative number as maximum capacity, will give default maximum capacity:";
+        const airport = new Airport(-35);
+        expected = 10;
 
         // Act
         let actual = airport.getMaxCapacity();
@@ -56,9 +57,32 @@ const userStory1 = function () {
         !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
         afterEach();
     };
+
+    const test3 = function () {
+        //? TEST 3 
+        //* maximum capacity set to null will give default maximum capacity.
+
+        // Arrange
+        testName = "Test 3 - Maximum capacity set to null will give default maximum capacity:";
+        const airport = new Airport(null);
+        expected = 10;
+
+        // Act
+        actual = airport.getMaxCapacity();
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
     test1();
     test2();
-    console.log("\n\n")
+    test3();
+    console.log("\n")
 };
 
 const userStory2 = function () {
@@ -110,7 +134,7 @@ const userStory2 = function () {
 
     const test3 = function () {
         //? TEST 3 
-        //* user is able to adjust the maximum capacity, of planes that the airport can hold, multiple times
+        //* user is able to adjust the maximum capacity of planes that the airport can hold, multiple times
 
         // Arrange
         testName = "Test 3 - Adjust the maximum capacity of planes that the airport can hold, multiple times:";
@@ -132,12 +156,12 @@ const userStory2 = function () {
     };
     const test4 = function () {
         //? TEST 4 
-        //* Change maximum capacity to a negative number will give 0.
+        //* Change maximum capacity to a negative number will not change maximum capacity.
 
         // Arrange
-        testName = "Test 4 - Change maximum capacity to a negative number will set maximum capacity to 0:";
-        const airport = new Airport(20);
-        expected = 0;
+        testName = "Test 4 - Change maximum capacity to a negative number will not change maximum capacity:";
+        const airport = new Airport(12);
+        expected = 12;
 
         // Act
         airport.setMaxCapacity(-5);
@@ -152,14 +176,70 @@ const userStory2 = function () {
         afterEach();
     };
 
+    const test5 = function () {
+        //? TEST 5 
+        //* Change maximum capacity to null will not change maximum capacity.
 
+        // Arrange
+        testName = "Test 5 - Change maximum capacity to null will not change maximum capacity:";
+        const airport = new Airport(20);
+        expected = 20;
+
+        // Act
+        airport.setMaxCapacity(null);
+        actual = airport.getMaxCapacity();
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
 
     test1();
     test2();
     test3();
     test4();
-    console.log("\n\n")
+    test5();
+    console.log("\n")
+};
+
+const userStory3 = function () {
+    console.log(`========================== User Story 3 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* Landed planes are added to the airport 'planes landed list'
+
+        // Arrange
+        testName = "Test 1 - Check if landed planes are added to the airport 'planes landed list':";
+        const airport = new Airport();
+        expected = 2;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+    test1();
+    console.log("\n")
 };
 
 userStory1();
 userStory2();
+userStory3();

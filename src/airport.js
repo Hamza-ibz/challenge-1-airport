@@ -1,23 +1,25 @@
 class Airport {
 
-    maxCapacity;
+    maxCapacity = 10;
+    landedPlanes = [];
 
     constructor(maxCapacity = 10) {
-        if (maxCapacity > 0) {
+        if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
             this.maxCapacity = maxCapacity;
-        } else { this.maxCapacity = 0 }
+        }
     }
 
     getMaxCapacity() {
         return this.maxCapacity;
     }
     setMaxCapacity(maxCapacity) {
-        if (maxCapacity > 0) {
+        if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
             this.maxCapacity = maxCapacity;
-        } else {
-            this.maxCapacity = 0
         }
     }
+    landPlane(plane) {
+        this.landedPlanes.push(plane);
+    };
 
 
 }
