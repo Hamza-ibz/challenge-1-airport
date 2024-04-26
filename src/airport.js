@@ -1,3 +1,4 @@
+import Plane from "../src/plane.js";
 class Airport {
 
     maxCapacity = 10;
@@ -18,7 +19,9 @@ class Airport {
         }
     }
     landPlane(plane) {
-        this.landedPlanes.push(plane);
+        if (plane instanceof Plane) {
+            this.landedPlanes.push(plane);
+        }
     };
 
 

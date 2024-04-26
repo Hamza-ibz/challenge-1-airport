@@ -236,7 +236,38 @@ const userStory3 = function () {
         afterEach();
     };
 
+    const test2 = function () {
+        //? TEST 2 
+        //* Check that only planes can land at the airport
+
+        // Arrange
+        testName = "Test 2 - Check that only planes can land at the airport:";
+        const airport = new Airport();
+        expected = 2;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const spaceShip = "spaceship";
+        airport.landPlane(spaceShip);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
     test1();
+    test2();
     console.log("\n")
 };
 
