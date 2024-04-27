@@ -45,9 +45,9 @@ class Airport {
             const index = this.landedPlanes.indexOf(plane);
             this.landedPlanes.splice(index, 1);
 
-            return `Plane ${plane} has take off`
+            return `Plane has taken off`
         } else {
-            return `Error with take off please check data`
+            return `Error with take-off please check data`
         }
     }
 

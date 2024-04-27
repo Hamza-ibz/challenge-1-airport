@@ -569,7 +569,7 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 4 - Alert Air Traffic Controller when Plane cant take-off:";
         const airport = new Airport();
-        expected = "Error with take off please check data";
+        expected = "Error with take-off please check data";
 
         // Act
         const plane1 = new Plane(1000);
@@ -596,11 +596,44 @@ const userStory5 = function () {
         afterEach();
     };
 
+    const test5 = function () {
+        //? TEST 5
+        //* Inform Air Traffic Controller when Plane takes-off
+
+        // Arrange
+        testName = "Test 5 - Inform Air Traffic Controller when Plane takes-off:";
+        const airport = new Airport();
+        expected = "Plane has taken off";
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        const plane3 = new Plane(3000);
+        airport.landPlane(plane3);
+
+        airport.planeTakeOff(plane1);
+
+        actual = airport.planeTakeOff(plane3);;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
 
     test1();
     test2();
     test3();
     test4();
+    test5();
     console.log("\n")
 };
 
