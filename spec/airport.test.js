@@ -302,8 +302,40 @@ const userStory3 = function () {
     console.log("\n")
 };
 
+const userStory4 = function () {
+    console.log(`========================== User Story 4 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* Check if the plane landed is actually added to the 'landedPlanes' list
+
+        // Arrange
+        testName = "Test 1 - Check if the plane landed is actually added to the 'landedPlanes' list:";
+        const airport = new Airport();
+        expected = true;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        actual = airport.landedPlanes.includes(plane1);
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+
+    test1();
+    console.log("\n")
+};
 
 
 userStory1();
 userStory2();
 userStory3();
+userStory4();
