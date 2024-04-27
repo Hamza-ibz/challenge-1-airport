@@ -428,8 +428,43 @@ const userStory5 = function () {
     };
 
 
+    const test3 = function () {
+        //? TEST 3
+        //* Verify that the correct plane took off/removed from the airport 'landedPlanes' list.
+
+        // Arrange
+        testName = "Test 3 - Verify that the correct plane took off/removed from the airport 'landedPlanes' list:";
+        const airport = new Airport();
+        expected = false;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        const plane3 = new Plane(3000);
+        airport.landPlane(plane3);
+
+        airport.planeTakeOff(plane2);
+
+
+        actual = airport.landedPlanes.includes(plane2);
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+
     test1();
     test2();
+    test3();
     console.log("\n")
 };
 
