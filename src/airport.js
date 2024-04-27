@@ -7,6 +7,9 @@ class Airport {
     constructor(maxCapacity = 10) {
         if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
             this.maxCapacity = maxCapacity;
+            return `Airport has maximum capacity of ${this.maxCapacity}`;
+        } else {
+            return `Incorrect value given`
         }
     }
 
@@ -17,6 +20,9 @@ class Airport {
     setMaxCapacity(maxCapacity) {
         if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
             this.maxCapacity = maxCapacity;
+            return `Airport changed maximum capacity to ${this.maxCapacity}`;
+        } else {
+            return `Incorrect value given`
         }
     }
 
@@ -27,6 +33,9 @@ class Airport {
     landPlane(plane) {
         if (plane instanceof Plane && !this.capacityFull() && !this.landedPlanes.includes(plane)) {
             this.landedPlanes.push(plane);
+            return `Plane has landed`
+        } else {
+            return `Error with landing please check data`
         }
     };
 
@@ -35,6 +44,10 @@ class Airport {
         if (this.landedPlanes.includes(plane)) {
             const index = this.landedPlanes.indexOf(plane);
             this.landedPlanes.splice(index, 1);
+
+            return `Plane ${plane} has take off`
+        } else {
+            return `Error with take off please check data`
         }
     }
 

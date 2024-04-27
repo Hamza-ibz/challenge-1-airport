@@ -20,16 +20,16 @@ So that i know the number of landing space available. <br>
 
 | Object  |   Properties    |     Messages     | Output |
 | :-----: | :-------------: | :--------------: | :----: |
-| Airport | maxCapacity@int | getMaxCapacity() |  @int  |
+| Airport | maxCapacity@int | getMaxCapacity() |  @Int  |
 
 #### User story 2:-
 As a user of the software, <br>
 I want to adjust the capacity of planes that the airport can hold, <br>
 So that i can manage the number of planes landing depending on airport condition. <br>
 
-| Object  |   Properties    |       Messages       | Output |
-| :-----: | :-------------: | :------------------: | :----: |
-| Airport | maxCapacity@int | setMaxCapacity(@int) | @void  |
+| Object  |   Properties    |       Messages       | Output  |
+| :-----: | :-------------: | :------------------: | :-----: |
+| Airport | maxCapacity@int | setMaxCapacity(@int) | @String |
 
 #### User story 3:-
 As an Air Traffic Controller, <br>
@@ -38,27 +38,27 @@ So that there is enough space for the plane to land passengers safely. <br>
 
 | Object  |        Properties         |     Messages      |  Output  |
 | :-----: | :-----------------------: | :---------------: | :------: |
-| Airport |      maxCapacity@int      |  capacityFull()   | @boolean |
-|         | planeArray @array[@Plane] | landPlane(@Plane) |  @void   |
-|  Plane  |        idPlane@int        |   getIdPlane()    |  @void   |
+| Airport |      maxCapacity@int      |  capacityFull()   | @Boolean |
+|         | planeArray @array[@Plane] | landPlane(@Plane) | @String  |
+|  Plane  |        idPlane@int        |   getIdPlane()    |  @Void   |
 
 #### User story 4:-
 As an Air Traffic Controller, <br>
 I want to instruct a plane to land if the plane isn't already at the airport, <br>
 So that i don't cause confusion by instructing a landed plane to land again. <br>
 
-| Object  |        Properties         |     Messages      | Output |
-| :-----: | :-----------------------: | :---------------: | :----: |
-| Airport | planeArray @array[@Plane] | landPlane(@Plane) | @void  |
-|  Plane  |        idPlane@int        |   getIdPlane()    | @void  |
+| Object  |        Properties         |     Messages      | Output  |
+| :-----: | :-----------------------: | :---------------: | :-----: |
+| Airport | planeArray @array[@Plane] | landPlane(@Plane) | @String |
+|  Plane  |        idPlane@int        |   getIdPlane()    |  @Void  |
 
 #### User story 5:-
 As an Air Traffic Controller, <br>
 I want to instruct a plane to take off from an airport as long as it is currently at the airport, <br>
 So that the plane can leave safely. <br>
 
-| Object  |        Properties         |       Messages       | Output |
-| :-----: | :-----------------------: | :------------------: | :----: |
-| Airport | planeArray @array[@Plane] | planeTakeOff(@Plane) | @void  |
-|  Plane  |        idPlane@int        |     getIdPlane()     | @void  |
+| Object  |        Properties         |       Messages       | Output  |
+| :-----: | :-----------------------: | :------------------: | :-----: |
+| Airport | planeArray @array[@Plane] | planeTakeOff(@Plane) | @String |
+|  Plane  |        idPlane@int        |     getIdPlane()     |  @Void  |
 
