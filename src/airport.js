@@ -9,7 +9,7 @@ class Airport {
             this.maxCapacity = maxCapacity;
             return `Airport has maximum capacity of ${this.maxCapacity}`;
         } else {
-            return `Incorrect value given`
+            return `Incorrect value given, please check data`
         }
     }
 
@@ -22,7 +22,7 @@ class Airport {
             this.maxCapacity = maxCapacity;
             return `Airport changed maximum capacity to ${this.maxCapacity}`;
         } else {
-            return `Incorrect value given`
+            return `Incorrect value given, please check data`
         }
     }
 

@@ -205,7 +205,7 @@ const userStory2 = function () {
 
         // Arrange
         testName = "Test 6 - Maximum capacity set to incorrect value will alert the user:";
-        expected = "Incorrect value given";
+        expected = "Incorrect value given, please check data";
 
         // Act
         const airport = new Airport(null);
