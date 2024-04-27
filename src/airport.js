@@ -13,13 +13,19 @@ class Airport {
     getMaxCapacity() {
         return this.maxCapacity;
     }
+
     setMaxCapacity(maxCapacity) {
         if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
             this.maxCapacity = maxCapacity;
         }
     }
+
+    capacityFull() {
+        return this.landedPlanes.length === this.getMaxCapacity();
+    }
+
     landPlane(plane) {
-        if (plane instanceof Plane) {
+        if (plane instanceof Plane && !this.capacityFull()) {
             this.landedPlanes.push(plane);
         }
     };

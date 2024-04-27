@@ -39,7 +39,7 @@ const userStory1 = function () {
 
     const test2 = function () {
         //? TEST 2 
-        //* When software has negative number as maximum capacity, the maximum capacity does not change
+        //* When software has negative number as maximum capacity, the software will give default maximum capacity
 
         // Arrange
         testName = "Test 2 - A negative number as maximum capacity, will give default maximum capacity:";
@@ -214,7 +214,7 @@ const userStory3 = function () {
         //* Landed planes are added to the airport 'planes landed list'
 
         // Arrange
-        testName = "Test 1 - Check if landed planes are added to the airport 'planes landed list':";
+        testName = "Test 1 - Check if landed planes are added to the airport 'landedPlanes' list:";
         const airport = new Airport();
         expected = 2;
 
@@ -266,10 +266,43 @@ const userStory3 = function () {
         afterEach();
     };
 
+    const test3 = function () {
+        //? TEST 3 
+        //* Ensure that planes are unable to land when the airport has reached its maximum capacity
+
+        // Arrange
+        testName = "Test 3 - Ensure that planes are unable to land when the airport has reached maximum capacity:";
+        const airport = new Airport(2);
+        expected = 2;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        const plane3 = new Plane(3000);
+        airport.landPlane(plane3);
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
     test1();
     test2();
+    test3();
     console.log("\n")
 };
+
+
 
 userStory1();
 userStory2();
