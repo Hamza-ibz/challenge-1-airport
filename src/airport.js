@@ -25,7 +25,7 @@ class Airport {
     }
 
     landPlane(plane) {
-        if (plane instanceof Plane && !this.capacityFull()) {
+        if (plane instanceof Plane && !this.capacityFull() && !this.landedPlanes.includes(plane)) {
             this.landedPlanes.push(plane);
         }
     };

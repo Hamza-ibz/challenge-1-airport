@@ -329,8 +329,37 @@ const userStory4 = function () {
         afterEach();
     };
 
+    const test2 = function () {
+        //? TEST 2 
+        //* Air Traffic Controller only instruct a plane to land if the plane isn't already at the airport 'landedPlanes' list
+
+        // Arrange
+        testName = "Test 2 - Instruct a plane to land if the plane isn't already at the airport 'landedPlanes' list:";
+        const airport = new Airport();
+        expected = 2;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        airport.landPlane(plane1);
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
 
     test1();
+    test2();
     console.log("\n")
 };
 
