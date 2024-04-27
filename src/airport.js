@@ -32,8 +32,10 @@ class Airport {
 
     planeTakeOff(plane) {
 
-        const index = this.landedPlanes.indexOf(plane);
-        this.landedPlanes.splice(index, 1);
+        if (this.landedPlanes.includes(plane)) {
+            const index = this.landedPlanes.indexOf(plane);
+            this.landedPlanes.splice(index, 1);
+        }
     }
 
 

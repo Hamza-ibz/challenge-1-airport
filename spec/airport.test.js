@@ -392,8 +392,44 @@ const userStory5 = function () {
         afterEach();
     };
 
+    const test2 = function () {
+        //? TEST 2 
+        //* Plane only can take off from the airport as long as it is currently at the airport
+
+        // Arrange
+        testName = "Test 2 - Plane only can take off from the airport as long as it is currently at the airport:";
+        const airport = new Airport();
+        expected = 2;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        const plane2 = new Plane(2000);
+        airport.landPlane(plane2);
+
+        const plane3 = new Plane(3000);
+        airport.landPlane(plane3);
+
+        const plane4 = new Plane(4000);
+
+        airport.planeTakeOff(plane1);
+        airport.planeTakeOff(plane4);
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
 
     test1();
+    test2();
     console.log("\n")
 };
 
