@@ -363,8 +363,42 @@ const userStory4 = function () {
     console.log("\n")
 };
 
+const userStory5 = function () {
+    console.log(`========================== User Story 5 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* Check if planes can take off from the airport by removing it from the 'landedPlanes' list
+
+        // Arrange
+        testName = "Test 1 - Check if planes can take off from the airport by removing it from the 'landedPlanes' list:";
+        const airport = new Airport();
+        expected = 0;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+        airport.planeTakeOff(plane1);
+
+
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+
+    test1();
+    console.log("\n")
+};
 
 userStory1();
 userStory2();
 userStory3();
 userStory4();
+userStory5();

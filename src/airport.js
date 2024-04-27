@@ -30,6 +30,12 @@ class Airport {
         }
     };
 
+    planeTakeOff(plane) {
+
+        const index = this.landedPlanes.indexOf(plane);
+        this.landedPlanes.splice(index, 1);
+    }
+
 
 }
 export default Airport;
