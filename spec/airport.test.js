@@ -13,6 +13,7 @@ const afterEach = () => {
     result = undefined;
 };
 
+// User Story 1:- Has 3 tests
 const userStory1 = function () {
     console.log(`========================== User Story 1 ==========================`);
 
@@ -85,6 +86,7 @@ const userStory1 = function () {
     console.log("\n")
 };
 
+// User Story 2:- Has 7 tests
 const userStory2 = function () {
     console.log(`========================== User Story 2 ==========================`);
 
@@ -252,6 +254,7 @@ const userStory2 = function () {
     console.log("\n")
 };
 
+// User Story 3:- Has 4 tests
 const userStory3 = function () {
     console.log(`========================== User Story 3 ==========================`);
 
@@ -378,6 +381,7 @@ const userStory3 = function () {
     console.log("\n")
 };
 
+// User Story 4:- Has 3 tests
 const userStory4 = function () {
     console.log(`========================== User Story 4 ==========================`);
 
@@ -464,6 +468,7 @@ const userStory4 = function () {
     console.log("\n")
 };
 
+// User Story 5:- Has 5 tests
 const userStory5 = function () {
     console.log(`========================== User Story 5 ==========================`);
 

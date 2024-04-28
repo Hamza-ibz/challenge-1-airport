@@ -2,11 +2,31 @@
 
 ## Task 1
 
+### Introduction
+Airports serves as gateways for millions of travelers and cargo shipments worldwide. To ensure the seamless movement of planes within and around airports, efficient air traffic management systems are needed. From guiding planes during takeoff and landing to managing flight paths and managing overcrowded airport, air traffic management plays a critical role in maintaining safety and efficiency. In this introduction, we delve into the problems, benefits and risk aspects of airports and air traffic management.
+
+### Problems 
+- Inefficient traffic management at airports
+- Possibility of traffic jams leading to delays and safety hazards
+- Lack of reliable data on plane flow
+- Risk of accidents due to overcrowding and exceeding maximum capacity
+- Difficulty managing urgent situations without the ability to adjust maximum capacity
+- Negative impact on passenger experience due to delays and safety concerns
+
+### Benefits 
+- Improved efficiency and safety in air traffic management
+- Reduction in traffic jams, delays, and safety hazards
+- Provision of reliable data on plane flow for air traffic controllers
+- Limitation of plane landings when the airport reaches maximum capacity, reducing accident risks
+- Prevention of traffic jams and reduction in delays by directing planes away from full airports
+- Flexibility to adjust maximum capacity for better management of urgent situations
+- Enhancement of passenger experience with smoother landings and takeoffs due to reliable airport operations
+
 ### Problems and Benefits 
  The Software is solving the problems of inefficient traffic management at an airport. Without this software, airports may experience traffic jams, leading to delays and even safety hazards or accidents. The software solves this by allowing air traffic controllers to direct planes to land or take off depending on airport condition such as landing space. The software will give a reliable data on the flow of planes instilling confidence into the air traffic controllers. This improves the overall efficiency and safety because it limits the number of plane landings when the airport slowly reaches maximum capacity which reduces the risk of accidents. If the airport is full, planes are not directed to land, thereby preventing traffic jams, reducing delays and improving safety. The software will be able to change its maximum capacity at the airport meaning it will be much easier to manage urgent situations. Additionally, the passengers experience will improve due to smooth landings and takeoffs managed with reliable airport operations.
 
 ### Risks
-One risk is that air traffic controllers maybe over reliant on this software which is a big risk because if the software experiences downtime, it could cause confuse between air traffic controllers and pilots, leading to delays or even accidents. The software also lacks access to flight times, which means it cannot confirm whether these planes are expected arrivals. This increases the possibility of unwanted planes being directed to land.
+One significant risk associated with the software is the potential over-reliance of air traffic controllers on its functionality. This could have serious consequences, particularly if the software encounters downtime. In such instances, the lack of support may lead to confusion and miscommunication between air traffic controllers and pilots, potentially resulting in delays or even accidents. Moreover, another drawback of the software is its inability to access flight times. The software cannot verify whether incoming planes are scheduled arrivals, increasing the likelihood of mistakenly directing planes to land.
 
 ---
 ## Task 2 and Task 3

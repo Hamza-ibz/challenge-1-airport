@@ -1,7 +1,7 @@
 import Airport from "./airport.js";
 import Plane from "../src/plane.js";
 
-// title
+// Title
 console.log(`=============== Demonstration of the Software ===============\n`);
 
 // Demonstration of user story 1:-
