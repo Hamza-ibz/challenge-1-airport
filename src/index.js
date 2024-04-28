@@ -127,6 +127,30 @@ airport.planeTakeOff(plane3);
 console.log(`Provides with the error: "${airport.planeTakeOff(plane3)}".\n`);
 
 
+// Demonstration of user story 6:-
+// As an Air Traffic Controller,
+// I want to prevent planes from landing at the airport during stormy weather conditions,
+// So the aircraft and passengers are safe, minimizing the risk of accidents during landing.
+
+console.log(`The Air Traffic Controllers are unable to land a plane during stormy conditions.`);
+console.log(`Currently stormy weather is "${airport.stormy}" and there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
+console.log(`An Air Traffic Controller instruct a plane to land.`);
+console.log(`Run Function for plane ` + JSON.stringify(plane3) + ` to land....`);
+airport.landPlane(plane3);
+console.log(`Now the airport has "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes) + `.\n`);
+
+// User story 6:- Plane can't land if the weather is stormy (gives error message).
+console.log(`An Air Traffic Controller cannot instruct a plane to land if the weather is stormy.`);
+console.log(`In fact, it will give an error message.`);
+console.log(`Currently there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
+console.log(`Run Function for a plane to land in stormy weather....`);
+airport.setMaxCapacity(10);
+airport.setStormy(true);
+const plane6 = new Plane(6000);
+airport.landPlane(plane6);
+console.log(`Provides with the error: "${airport.landPlane(plane4)}".\n`);
+
+
 
 
 

@@ -42,7 +42,7 @@ class Airport {
 
     planeTakeOff(plane) {
 
-        if (this.landedPlanes.includes(plane)) {
+        if (this.landedPlanes.includes(plane) && !this.stormy) {
             const index = this.landedPlanes.indexOf(plane);
             this.landedPlanes.splice(index, 1);
 

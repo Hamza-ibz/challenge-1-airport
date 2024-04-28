@@ -24,6 +24,7 @@ const userStory1 = function () {
         // Arrange
         testName = "Test 1 - Check maximum capacity of planes the airport can hold:";
         const airport = new Airport(20);
+        // Maximum capacity set t0 20 and should reduce show 20
         expected = 20;
 
         // Act
@@ -66,6 +67,7 @@ const userStory1 = function () {
         // Arrange
         testName = "Test 3 - Maximum capacity set to null will give default maximum capacity:";
         const airport = new Airport(null);
+        // Maximum capacity default value should be 10
         expected = 10;
 
         // Act
@@ -98,6 +100,7 @@ const userStory2 = function () {
         // Arrange
         testName = "Test 1 - Increase the maximum capacity of planes that the airport can hold:";
         const airport = new Airport(20);
+        // Maximum capacity first set at 20 and should increase to 30
         expected = 30;
 
         // Act
@@ -120,6 +123,7 @@ const userStory2 = function () {
         // Arrange
         testName = "Test 2 - Decrease the maximum capacity of planes that the airport can hold:";
         const airport = new Airport(20);
+        // Maximum capacity first set at 20 and should reduce to 5
         expected = 5;
 
         // Act
@@ -266,6 +270,7 @@ const userStory3 = function () {
         // Arrange
         testName = "Test 1 - Check if landed planes are added to the airport 'landedPlanes' list:";
         const airport = new Airport();
+        // 2 planes landed and are added to the landed list
         expected = 2;
 
         // Act
@@ -293,6 +298,8 @@ const userStory3 = function () {
         // Arrange
         testName = "Test 2 - Check that only planes can land at the airport:";
         const airport = new Airport();
+        // 2 plane and 1 spaceship instructed to land 
+        // the landed list only includes 2 plane
         expected = 2;
 
         // Act
@@ -323,6 +330,8 @@ const userStory3 = function () {
         // Arrange
         testName = "Test 3 - Ensure that planes are unable to land when the airport has reached maximum capacity:";
         const airport = new Airport(2);
+        // Maximum capacity is 2 but 3 plane was instructed to land 
+        // Therefore only 2 planes can land
         expected = 2;
 
         // Act
@@ -394,6 +403,7 @@ const userStory4 = function () {
         // Arrange
         testName = "Test 1 - Check if the plane landed is actually added to the 'landedPlanes' list:";
         const airport = new Airport();
+        // 1 plane landed therefore that plane should be included in the landed list
         expected = true;
 
         // Act
@@ -418,6 +428,7 @@ const userStory4 = function () {
         // Arrange
         testName = "Test 2 - Instruct a plane to land if the plane isn't already landed at the airport.";
         const airport = new Airport();
+        // 2 planes landed instructing an already landed plane will not increase landed list
         expected = 2;
 
         // Act
@@ -447,6 +458,7 @@ const userStory4 = function () {
         // Arrange
         testName = "Test 3 - Inform Air Traffic Controller when a plane landed and added to 'landedPlanes' list:";
         const airport = new Airport();
+        // 1 plane landed Therefore it is added to landed list
         expected = "Plane has landed";
 
         // Act
@@ -482,6 +494,8 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 1 - Check if planes can take off from the airport by removing it from the 'landedPlanes' list:";
         const airport = new Airport();
+        // 1 plane landed and 1 plane instructed to take off 
+        // Therefore landed list should be empty
         expected = 0;
 
         // Act
@@ -508,6 +522,8 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 2 - Planes only can take off from the airport as long as it is currently at the airport:";
         const airport = new Airport();
+        // 3 planes landed and 2 instructed to take off however 1 plane is not in the landed list 
+        // Therefore didn't take off from landed list
         expected = 2;
 
         // Act
@@ -544,6 +560,8 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 3 - Verify that the correct plane took-off/removed from the airport 'landedPlanes' list:";
         const airport = new Airport();
+        // Check to see if plane remains in the landed list 
+        // If plane took off it should give false
         expected = false;
 
         // Act
@@ -577,6 +595,7 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 4 - Alert Air Traffic Controller when Plane cant take-off:";
         const airport = new Airport();
+        // Message presented when Plane cant takes-off
         expected = "Error with take-off please check data";
 
         // Act
@@ -611,6 +630,7 @@ const userStory5 = function () {
         // Arrange
         testName = "Test 5 - Inform Air Traffic Controller when Plane takes-off:";
         const airport = new Airport();
+        // Message presented when Plane takes-off
         expected = "Plane has taken off";
 
         // Act
@@ -648,7 +668,7 @@ const userStory5 = function () {
 
 
 // Additional Features
-// User Story 6:- Has 3 tests
+// User Story 6:- Has 2 tests
 const userStory6 = function () {
     console.log(`========================== User Story 6 ==========================`);
 
@@ -659,6 +679,8 @@ const userStory6 = function () {
         // Arrange
         testName = "Test 1 - User can change the software weather, when it is stormy:";
         const airport = new Airport(10);
+        // The weather condition is default at not stormy weather
+        // So expected should change to stormy weather (true)
         expected = true;
 
         // Act
@@ -675,11 +697,13 @@ const userStory6 = function () {
 
     const test2 = function () {
         //? TEST 2 
-        //* Air Traffic Controller unable to land plane when it is stormy
+        //* Air Traffic Controllers unable to land plane when it is stormy
 
         // Arrange
-        testName = "Test 2 - Air Traffic Controller unable to land plane when weather is stormy:";
+        testName = "Test 2 - Air Traffic Controllers unable to land plane when weather is stormy:";
         const airport = new Airport(10);
+        // There is 0 planes landed. Air Traffic Controllers unable to instruct the plane to land
+        // So expected should remain 0
         expected = 0;
 
         // Act
@@ -706,9 +730,50 @@ const userStory6 = function () {
     console.log("\n")
 };
 
+
+// Additional Features
+// User Story 7:- Has 1 tests
+const userStory7 = function () {
+    console.log(`========================== User Story 7 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* Air Traffic Controllers unable to instruct a plane to take-off when the weather is stormy
+
+        // Arrange
+        testName = "Test 1 - Air Traffic Controllers unable to instruct a plane to take-off when the weather is stormy:";
+        const airport = new Airport(10);
+        // There is only 1 plane landed. Air Traffic Controllers unable to instruct the plane to take-off
+        // So expected should remain 1
+        expected = 1;
+
+        // Act
+        const plane1 = new Plane(1000);
+        airport.landPlane(plane1);
+
+        airport.setStormy(true);
+
+        airport.planeTakeOff(plane1);
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+
+    test1();
+    console.log(`==================================================================`);
+    console.log("\n")
+};
 userStory1();
 userStory2();
 userStory3();
 userStory4();
 userStory5();
 userStory6();
+userStory7();
