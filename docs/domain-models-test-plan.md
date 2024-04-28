@@ -113,3 +113,6 @@ So the aircraft and passengers can reach their destination safely, minimizing th
 <img src="kanban-board-US3-complete-US4-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
 <img src="kanban-board-US4-complete-US5-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
 <img src="kanban-board-complete.png" width="200" style="display: block; margin: 0 auto"/>
+
+link to kanban board:-
+https://miro.com/app/board/uXjVKQaiFG8=/
