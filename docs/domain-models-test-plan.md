@@ -94,6 +94,17 @@ So the aircraft and passengers are safe, minimizing the risk of accidents during
 |         |     stormy(@boolean)      | setStormy(@boolean) | @boolean |
 |  Plane  |        idPlane@int        |    getIdPlane()     |  @Void   |
 
+#### User story 7:-
+As an Air Traffic Controller, <br>
+I want to ensure that planes cannot take-off from the airport when the weather conditions are stormy, <br>
+So the aircraft and passengers can reach their destination safely, minimizing the risk of accidents during the flight. <br>
+
+| Object  |        Properties         |       Messages       |  Output  |
+| :-----: | :-----------------------: | :------------------: | :------: |
+| Airport | planeArray @array[@Plane] | planeTakeOff(@Plane) | @String  |
+|         |     stormy(@boolean)      | setStormy(@boolean)  | @boolean |
+|  Plane  |        idPlane@int        |     getIdPlane()     |  @Void   |
+
 ### Kanban Board
 <img src="kanban-board-start.png" width="200" style="display: block; margin: 0 auto" />
 <img src="kanban-board-US1-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
