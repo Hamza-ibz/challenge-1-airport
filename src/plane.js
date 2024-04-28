@@ -1,8 +1,8 @@
 class Plane {
-    id;
+    idPlane;
 
     constructor(id) {
-        this.id = id;
+        this.idPlane = id;
     }
 }
 

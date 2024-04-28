@@ -410,7 +410,7 @@ const userStory4 = function () {
         //* Air Traffic Controller only instruct a plane to land if the plane isn't already at the airport 'landedPlanes' list
 
         // Arrange
-        testName = "Test 2 - Instruct a plane to land if the plane isn't already at the airport 'landedPlanes' list:";
+        testName = "Test 2 - Instruct a plane to land if the plane isn't already landed at the airport.";
         const airport = new Airport();
         expected = 2;
 
