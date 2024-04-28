@@ -62,3 +62,11 @@ So that the plane can leave safely. <br>
 | Airport | planeArray @array[@Plane] | planeTakeOff(@Plane) | @String |
 |  Plane  |        idPlane@int        |     getIdPlane()     |  @Void  |
 
+### Kanban Board
+<img src="kanban-board-start.png" width="200" style="display: block; margin: 0 auto" />
+<img src="kanban-board-US1-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
+<img src="kanban-board-US1-complete-US2-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
+<img src="kanban-board-US2-complete-US3-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
+<img src="kanban-board-US3-complete-US4-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
+<img src="kanban-board-US4-complete-US5-in-progress.png" width="200" style="display: block; margin: 0 auto"/>
+<img src="kanban-board-complete.png" width="200" style="display: block; margin: 0 auto"/>
