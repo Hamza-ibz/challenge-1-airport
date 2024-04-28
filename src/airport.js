@@ -3,6 +3,7 @@ class Airport {
 
     maxCapacity = 10;
     landedPlanes = [];
+    stormy = false;
 
     constructor(maxCapacity = 10) {
         if (maxCapacity >= 0 && Number.isInteger(maxCapacity)) {
@@ -49,6 +50,11 @@ class Airport {
         } else {
             return `Error with take-off please check data`
         }
+    }
+
+    setStormy(isStormy) {
+
+        return this.stormy = isStormy;
     }
 
 

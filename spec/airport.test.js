@@ -646,8 +646,42 @@ const userStory5 = function () {
     console.log("\n")
 };
 
+
+// Additional Features
+// User Story 6:- Has 3 tests
+const userStory6 = function () {
+    console.log(`========================== User Story 1 ==========================`);
+
+    const test1 = function () {
+        //? TEST 1 
+        //* User can change the software weather when it is stormy
+
+        // Arrange
+        testName = "Test 1 - User can change the software weather, when it is stormy:";
+        const airport = new Airport(10);
+        expected = true;
+
+        // Act
+        actual = airport.setStormy(true);
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
+
+    test1();
+    console.log(`==================================================================`);
+    console.log("\n")
+};
+
 userStory1();
 userStory2();
 userStory3();
 userStory4();
 userStory5();
+userStory6();
