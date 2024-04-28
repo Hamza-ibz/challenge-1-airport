@@ -83,6 +83,7 @@ const userStory1 = function () {
     test1();
     test2();
     test3();
+    console.log(`==================================================================`);
     console.log("\n")
 };
 
@@ -250,7 +251,7 @@ const userStory2 = function () {
     test5();
     test6();
     test7();
-
+    console.log(`==================================================================`);
     console.log("\n")
 };
 
@@ -378,6 +379,7 @@ const userStory3 = function () {
     test2();
     test3();
     test4();
+    console.log(`==================================================================`);
     console.log("\n")
 };
 
@@ -465,6 +467,7 @@ const userStory4 = function () {
     test1();
     test2();
     test3();
+    console.log(`==================================================================`);
     console.log("\n")
 };
 
@@ -639,6 +642,7 @@ const userStory5 = function () {
     test3();
     test4();
     test5();
+    console.log(`==================================================================`);
     console.log("\n")
 };
 

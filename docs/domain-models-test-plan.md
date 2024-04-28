@@ -3,7 +3,7 @@
 ## Task 1
 
 ### Introduction
-Airports serves as gateways for millions of travelers and cargo shipments worldwide. To ensure the seamless movement of planes within and around airports, efficient air traffic management systems are needed. From guiding planes during takeoff and landing to managing flight paths and managing overcrowded airport, air traffic management plays a critical role in maintaining safety and efficiency. In this introduction, we delve into the problems, benefits and risk aspects of airports and air traffic management.
+Airports serves as gateways for millions of travelers and cargo shipments worldwide. To ensure the seamless movement of planes within and around airports, efficient air traffic management systems are needed. From guiding planes during takeoff and landing to managing flight paths and managing overcrowded airport, air traffic management plays a huge role in maintaining safety and efficiency. In this introduction, we delve into the problems, benefits and risk aspects of airports and air traffic management.
 
 ### Problems 
 - Inefficient traffic management at airports
@@ -17,7 +17,6 @@ Airports serves as gateways for millions of travelers and cargo shipments worldw
 - Improved efficiency and safety in air traffic management
 - Reduction in traffic jams, delays, and safety hazards
 - Provision of reliable data on plane flow for air traffic controllers
-- Limitation of plane landings when the airport reaches maximum capacity, reducing accident risks
 - Prevention of traffic jams and reduction in delays by directing planes away from full airports
 - Flexibility to adjust maximum capacity for better management of urgent situations
 - Enhancement of passenger experience with smoother landings and takeoffs due to reliable airport operations
@@ -81,6 +80,19 @@ So that the plane can leave safely. <br>
 | :-----: | :-----------------------: | :------------------: | :-----: |
 | Airport | planeArray @array[@Plane] | planeTakeOff(@Plane) | @String |
 |  Plane  |        idPlane@int        |     getIdPlane()     |  @Void  |
+
+### Additional Features
+
+#### User story 6:-
+As an Air Traffic Controller, <br>
+I want to prevent planes from landing at the airport during stormy weather conditions, <br>
+So the aircraft and passengers are safe, minimizing the risk of accidents during landing. <br>
+
+| Object  |        Properties         |      Messages       |  Output  |
+| :-----: | :-----------------------: | :-----------------: | :------: |
+| Airport | planeArray @array[@Plane] |  landPlane(@Plane)  | @String  |
+|         |     stormy(@boolean)      | setStormy(@boolean) | @boolean |
+|  Plane  |        idPlane@int        |    getIdPlane()     |  @Void   |
 
 ### Kanban Board
 <img src="kanban-board-start.png" width="200" style="display: block; margin: 0 auto" />
