@@ -24,7 +24,7 @@ const userStory1 = function () {
         // Arrange
         testName = "Test 1 - Check maximum capacity of planes the airport can hold:";
         const airport = new Airport(20);
-        // Maximum capacity set t0 20 and should reduce show 20
+        // Maximum capacity set to 20 and should show 20
         expected = 20;
 
         // Act
@@ -46,6 +46,7 @@ const userStory1 = function () {
         // Arrange
         testName = "Test 2 - A negative number as maximum capacity, will give default maximum capacity:";
         const airport = new Airport(-35);
+        // Default maximum capacity is 10
         expected = 10;
 
         // Act

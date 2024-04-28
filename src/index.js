@@ -4,6 +4,8 @@ import Plane from "../src/plane.js";
 // Title
 console.log(`=============== Demonstration of the Software ===============\n`);
 
+console.log(`================ Maximum Capacity of airport ================\n`);
+
 // Demonstration of user story 1:-
 // As a user of the software,
 // I want to know the maximum capacity of planes that the airport can hold,
@@ -48,6 +50,7 @@ console.log(`"${airport.setMaxCapacity(3)}"\n`);
 // As an Air Traffic Controller,
 // I want to instruct a plane to land at the airport if the airport is not at full capacity,
 // So that there is enough space for the plane to land passengers safely.
+console.log(`=============== Plane Landing at The Airport ================\n`);
 
 console.log(`currently there are no planes landed at the airport. This can be seen on the "landedPlane" list.`);
 console.log(`"landedPlane" list: ` + JSON.stringify(airport.landedPlanes) + `\n`);
@@ -95,21 +98,22 @@ console.log(`The software only allows a plane to land if the plane isn't already
 console.log(`Therefore, An Air Traffic Controller cannot land a plane that is already landed.`);
 console.log(`In fact, it will give an error message.`);
 console.log(`The plane that are landed are: ` + JSON.stringify(airport.landedPlanes));
-console.log(`Run Function to land a landed plane....`);
+console.log(`Run Function to land a landed plane (${JSON.stringify(plane3)})....`);
 airport.landPlane(plane3);
 console.log(`Provides with the error: "${airport.landPlane(plane3)}".\n`);
 
-console.log(`Run Function to land a plane that is not already landed....`);
-airport.setMaxCapacity(4);
 const plane5 = new Plane(5000);
+console.log(`Run Function to land a plane (${JSON.stringify(plane5)}) that is not already landed....`);
+airport.setMaxCapacity(4);
 airport.landPlane(plane5);
-console.log(`The plane that are landed are: ` + JSON.stringify(airport.landedPlanes) + `\n`);
+console.log(`The plane is added  to the list: ` + JSON.stringify(airport.landedPlanes) + `\n`);
 
 
 // Demonstration of user story 5:-
 // As an Air Traffic Controller,
 // I want to instruct a plane to take off from an airport as long as it is currently at the airport,
 // So that the plane can leave safely.
+console.log(`=============== Plane Take-Off from the airport ===============\n`);
 
 console.log(`The software only allows a plane to take-off from the airport as long as it is currently at the airport "landedPlane" list.`);
 console.log(`Currently there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
@@ -122,7 +126,7 @@ console.log(`Now the airport has "${airport.landedPlanes.length}" planes: ` + JS
 console.log(`An Air Traffic Controller cannot instruct a plane to take-off if its not at the airport "landedPlane" list.`);
 console.log(`In fact, it will give an error message.`);
 console.log(`Currently there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
-console.log(`Run Function for a plane that is not at the airport to take-off....`);
+console.log(`Run Function for a plane (${JSON.stringify(plane3)}) that is not at the airport to take-off....`);
 airport.planeTakeOff(plane3);
 console.log(`Provides with the error: "${airport.planeTakeOff(plane3)}".\n`);
 
@@ -131,6 +135,7 @@ console.log(`Provides with the error: "${airport.planeTakeOff(plane3)}".\n`);
 // As an Air Traffic Controller,
 // I want to prevent planes from landing at the airport during stormy weather conditions,
 // So the aircraft and passengers are safe, minimizing the risk of accidents during landing.
+console.log(`================== Stormy Weather Conditions =================\n`);
 
 console.log(`The Air Traffic Controllers are unable to land a plane during stormy conditions.`);
 console.log(`Currently stormy weather is "${airport.stormy}" and there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
@@ -150,8 +155,27 @@ const plane6 = new Plane(6000);
 airport.landPlane(plane6);
 console.log(`Provides with the error: "${airport.landPlane(plane4)}".\n`);
 
+// Demonstration of user story 7:-
+// As an Air Traffic Controller,
+// I want to ensure that planes cannot take - off from the airport when the weather conditions are stormy,
+// So the aircraft and passengers can reach their destination safely, minimizing the risk of accidents during the flight.
 
+// User story 7:- Plane can't take-off if the weather is stormy (gives error message).
+console.log(`An Air Traffic Controller cannot instruct a plane to take-off if the weather is stormy.`);
+console.log(`In fact, it will give an error message.`);
+console.log(`Currently there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
+console.log(`Run Function for a plane to take-off in stormy weather....`);
+airport.setStormy(true);
+airport.planeTakeOff(plane5);
+console.log(`Provides with the error: "${airport.landPlane(plane4)}".\n`);
 
+console.log(`The Air Traffic Controllers are only able to instruct a plane to take off if there is no stormy conditions.`);
+airport.setStormy(false);
+console.log(`Currently stormy weather is "${airport.stormy}" and there is "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes));
+console.log(`An Air Traffic Controller instruct a plane to take-off.`);
+console.log(`Run Function for plane ` + JSON.stringify(plane5) + ` to take-off....`);
+airport.planeTakeOff(plane5);
+console.log(`Now the airport has "${airport.landedPlanes.length}" planes: ` + JSON.stringify(airport.landedPlanes) + `.\n`);
 
 
 
