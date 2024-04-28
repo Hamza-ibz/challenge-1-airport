@@ -32,7 +32,7 @@ class Airport {
     }
 
     landPlane(plane) {
-        if (plane instanceof Plane && !this.capacityFull() && !this.landedPlanes.includes(plane)) {
+        if (plane instanceof Plane && !this.capacityFull() && !this.landedPlanes.includes(plane) && !this.stormy) {
             this.landedPlanes.push(plane);
             return `Plane has landed`
         } else {

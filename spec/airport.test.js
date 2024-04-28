@@ -650,7 +650,7 @@ const userStory5 = function () {
 // Additional Features
 // User Story 6:- Has 3 tests
 const userStory6 = function () {
-    console.log(`========================== User Story 1 ==========================`);
+    console.log(`========================== User Story 6 ==========================`);
 
     const test1 = function () {
         //? TEST 1 
@@ -673,8 +673,35 @@ const userStory6 = function () {
         afterEach();
     };
 
+    const test2 = function () {
+        //? TEST 2 
+        //* Air Traffic Controller unable to land plane when it is stormy
+
+        // Arrange
+        testName = "Test 2 - Air Traffic Controller unable to land plane when weather is stormy:";
+        const airport = new Airport(10);
+        expected = 0;
+
+        // Act
+        const plane1 = new Plane(1000);
+
+        airport.setStormy(true);
+
+        airport.landPlane(plane1);
+        actual = airport.landedPlanes.length;
+
+        // Assert
+        result = assertEquals(actual, expected);
+
+        // Report
+        console.log(result ? `${testName} [result = Pass]` : `${testName} [result = Fail]`);
+        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        afterEach();
+    };
+
 
     test1();
+    test2();
     console.log(`==================================================================`);
     console.log("\n")
 };
